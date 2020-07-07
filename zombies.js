@@ -7,10 +7,22 @@ let updateZombies = () => {
 
 
         // update the location
-        
-        zombie[i].add(zombieSpeed[i])
-        console.log(zombie[i].x, zombie[i].y)
 
+        zombie[i].add(zombieSpeed[i])
+
+        // containing zombies
+        if (zombie[i].x > width+zombieSize/2) {
+            zombie[i].x = 0-zombieSize/2
+        }
+        if (zombie[i].x < 0-zombieSize/2) {
+            zombie[i].x = width+zombieSize/2
+        }
+        if (zombie[i].y > height+zombieSize/2) {
+            zombie[i].y = 0-zombieSize/2
+        }
+        if (zombie[i].y < 0-zombieSize/2) {
+            zombie[i].y = height+zombieSize/2
+        }
     
         // drawing our zombies
         push()
