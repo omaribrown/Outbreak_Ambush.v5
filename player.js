@@ -13,7 +13,7 @@ let score
 let updatePlayer = () => {
 
 
-
+    youDied()
     // make our movements
     if (keyIsDown(LEFT_ARROW)) {
         heading -= 5
@@ -45,7 +45,7 @@ let updatePlayer = () => {
     if (player.y < 0) {
         player.y = window.innerHeight
     }
-    
+
     playerSpeed.mult(.9)
     player.add(playerSpeed)
 
@@ -63,6 +63,45 @@ let updatePlayer = () => {
     image(img, 0, 0, size, size)
     // ending our drawing
     pop()
+}
 
+// player is dead function
+let youDied = () => {
+    if (lifes <= 0) {
 
+        background('black')
+        // begin drawing text
+        push()
+        textAlign(CENTER)
+        fill('white')
+        textSize(40)
+        text("YOU DIED...", window.innerWidth/2, window.innerHeight/2+30)
+        text(`You finished with ${score} Points!`, window.innerWidth/2, window.innerHeight/2+80)
+        pop()   
+        // stops running game 
+        noLoop()
+        // create restart button
+        restartBtn = createButton("Play Again")
+        restartBtn.position(window.innerWidth/2, window.innerHeight/2+110)
+        restartBtn.mousePressed(reset)
+    }
+}
+
+// function to reset game will go inside you died function 
+let reset = () => {
+    // hide try again button
+    restartBtn.hide()
+    // reset stats
+    lifes = 3
+    score = 0
+    minZombieSpeed = 1
+    maxZombieSpeed = 3
+    level = 1
+    zombieKillCounter = 0
+    shotCounter = 0
+    // reset player location
+    player.x = window.innerWidth/2
+    player.y = window.innerHeight/2
+
+    loop()
 }
