@@ -31,6 +31,21 @@ let updatePlayer = () => {
         playerSpeed.sub(force.mult(0.2))
     }
 
+
+    // containing the player
+    if (player.x > window.innerWidth) {
+        player.x = 0
+    }
+    if (player.x < 0) {
+        player.x = window.innerWidth
+    }
+    if (player.y > window.innerHeight) {
+        player.y = 0
+    }
+    if (player.y < 0) {
+        player.y = window.innerHeight
+    }
+    
     playerSpeed.mult(.9)
     player.add(playerSpeed)
 
