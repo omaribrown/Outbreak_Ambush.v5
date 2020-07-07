@@ -7,8 +7,13 @@ let updateZombies = () => {
     for (i = 0; i < zombie.length; i++) {
 
 
+        // creating collision with player
+        if (dist(zombie[i].x, zombie[i].y, player.x, player.y) < zombieSize/2) {
+        // reset position
+        resetPosition()
+        }        
+        
         // update the location
-
         zombie[i].add(zombieSpeed[i])
 
         // containing zombies
@@ -42,4 +47,14 @@ let updateZombies = () => {
         ellipse(zombie[i].x, zombie[i].y, zombieSize*.1)
         pop()
     }
+}
+
+// resetting player position after collision with zombie
+let resetPosition = () => {
+    player.x = random(0, window.innerWidth)
+    player.y = random(0, window.innerHeight)
+    // resetting speed
+    playerSpeed.mult(0)
+    // lets make our hero invincible for 2 seconds
+    lifes-= 1
 }
