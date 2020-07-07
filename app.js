@@ -21,6 +21,9 @@ function setup() {
     force = createVector(0, 0)
     score = 0
     lifes = 3
+    zombieKillCounter = 0
+    minZombieSpeed = 1
+    maxZombieSpeed = 3
 
     
 

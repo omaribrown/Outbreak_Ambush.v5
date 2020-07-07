@@ -1,6 +1,7 @@
 let zombie
 let zombieSize
 let zombieSpeed
+let zombieKillCounter
 
 let updateZombies = () => {
     for (i = 0; i < zombie.length; i++) {
