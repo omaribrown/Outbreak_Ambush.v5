@@ -10,7 +10,7 @@ let updateZombies = () => {
         // creating collision with player
         if (dist(zombie[i].x, zombie[i].y, player.x, player.y) < zombieSize/2) {
         // reset position
-        resetPosition()
+            resetPosition()
         }        
         
         // update the location

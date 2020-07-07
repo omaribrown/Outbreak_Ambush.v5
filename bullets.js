@@ -19,18 +19,15 @@ let updateBullets = () => {
                     minZombieSpeed = 2
                     maxZombieSpeed = 4
                     level = 2
-                    // console.log(`current level: ${level}`)
                 } else if (zombieKillCounter > 10) {
                     minZombieSpeed = 3
                     maxZombieSpeed = 5
                     level = 3
-                    // console.log(`current level: ${level}`)
                 }
                 // zombie is going to respawn at random location
                 zombie[j] = createVector(random(0, window.innerWidth), random(0, window.innerHeight))
                 // zombie speed is going to be reestablished
                 zombieSpeed[j] = p5.Vector.random2D().mult(random(minZombieSpeed, maxZombieSpeed))
-                console.log(`speed range: ${minZombieSpeed}, ${maxZombieSpeed}`)
             }
         }
         

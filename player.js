@@ -46,6 +46,9 @@ let updatePlayer = () => {
         player.y = window.innerHeight
     }
 
+    //updating the player
+    // mult is used as a multiple
+    // speed will be slightly slower than max zombie
     playerSpeed.mult(.9)
     player.add(playerSpeed)
 
@@ -63,6 +66,25 @@ let updatePlayer = () => {
     image(img, 0, 0, size, size)
     // ending our drawing
     pop()
+
+
+    // display health
+    push()
+    fill(0)
+    noStroke()
+    rect(0, 0, width, 20)
+
+    fill(255)
+    text(`Life Remaining: ${lifes}`, 10, 15)
+
+    // displaying score
+    fill(255)
+    text(`Score: ${score}`, 130, 15)
+
+    fill(255)
+    text(`Level: ${level}`, width-110, 15)
+    pop()
+
 }
 
 // player is dead function
