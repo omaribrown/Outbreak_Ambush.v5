@@ -18,6 +18,10 @@ function setup() {
     size = 60 
     startSpeedMin = 1
     startSpeedMax = 3
+    force = createVector(0, 0)
+    score = 0
+    lifes = 3
+    
     
 
 

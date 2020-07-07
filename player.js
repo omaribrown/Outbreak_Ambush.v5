@@ -3,10 +3,38 @@ let player
 let playerSize
 let playerSpeed
 let heading // for direction changes
+let force
+let size
+let health
+let score
 
 
 
 let updatePlayer = () => {
+
+
+
+    // make our movements
+    if (keyIsDown(LEFT_ARROW)) {
+        heading -= 5
+    }
+    if (keyIsDown(RIGHT_ARROW)) {
+        heading += 5
+    }
+    if (keyIsDown(UP_ARROW)) {
+        // describing the accelleration
+        force = p5.Vector.fromAngle(radians(heading))
+        playerSpeed.add(force.mult(0.3))
+    }
+    if (keyIsDown(DOWN_ARROW)) {
+        force = p5.Vector.fromAngle(radians(heading))
+        playerSpeed.sub(force.mult(0.2))
+    }
+
+    playerSpeed.mult(.9)
+    player.add(playerSpeed)
+
+
 
     // saving our current state so we can draw our character
     push()
