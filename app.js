@@ -21,7 +21,7 @@ function setup() {
     force = createVector(0, 0)
     score = 0
     lifes = 3
-    
+
     
 
 
@@ -42,4 +42,5 @@ function draw() {
     // generating and running the player
     updatePlayer()
     updateZombies()
+    updateBullets()
 }
