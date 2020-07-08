@@ -1,6 +1,9 @@
 # Outbreak_Ambush.v5
  The Classic Asteroids game meets the Zombie Apocolypse...
 
+#### Play for yourself on Netlify:
+- https://eager-booth-f0a13d.netlify.app/
+
 ## Summary: 
 - You've found yourself on the run from zombies. They've chased you into an open field. You're surrounded. You must fight for your survival as long as possible. On the bright side, you have unlimited amunition and 3 lives, and the zombies can't see during the day so they only run in straight lines. 
 
