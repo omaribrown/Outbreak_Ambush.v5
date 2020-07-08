@@ -2,6 +2,7 @@ let bullets = []
 let bulletSpeed = []
 let minZombieSpeed
 let maxZombieSpeed
+let zombieHeading
 
 
 let updateBullets = () => {
