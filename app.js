@@ -4,13 +4,14 @@ let scene
 function preload() {
     // loading character image used
     img = loadImage("assets/survivor.png")
+    img2 = loadImage("assets/zombie.png")
 }
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight) // creating my canvas
     zombie = [] // zombie cords are to be stored and referenced to inside of an array
     zombieSpeed = [] // speed cords for zombies will be stored inside of an array 
-    zombieSize = 50
+    zombieSize = 100
     player = createVector(width/2, height/2) // creating our player on the cordonates of the canvas
     playerSpeed = createVector(0, 0)
     heading = 0
@@ -25,14 +26,16 @@ function setup() {
     minZombieSpeed = 1
     maxZombieSpeed = 3
     scene = 1
+    zombieHeading = []
 
     // generate our zombies
     for (i = 0; i < 8; i++) {
         // adding zombies to array with random location
         zombie.push(createVector(random(0, width), random(0, height)))
-        // giving zombies a speed between 1-3
-
+        // p5.vector.random2d creates vector with random cords... multiplied by our speed range
         zombieSpeed.push(p5.Vector.random2D().mult(random(startSpeedMin, startSpeedMax)))
+        // push heading to zombie on spawn
+        // zombieHeading.push(radians(zombieHeading))
     }
 }
 
