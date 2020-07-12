@@ -71,9 +71,9 @@ function draw() {
 
     if (scene == 2) {
         background("#00b300")
-        if (zombieKillCounter % 2 == 0) {
-            background("black")
-        }
+        // if (zombieKillCounter % 2 == 0) {
+        //     background("black")
+        // }
 
         updatePlayer()
         updateZombies()
@@ -270,30 +270,29 @@ let updateZombies = () => {
         }
     
         // drawing our zombies
-        // push()
-        // strokeWeight(0)
-        // fill("#316c1f")
-        // ellipse(zombie[i].x, zombie[i].y, zombieSize)
-        // fill("#456e25")
-        // ellipse(zombie[i].x, zombie[i].y, zombieSize*.9)
-        // fill("#5a702a")
-        // ellipse(zombie[i].x, zombie[i].y, zombieSize*.7)
-        // fill("#6e722e")
-        // ellipse(zombie[i].x, zombie[i].y, zombieSize*.5)
-        // fill("#827434")
-        // ellipse(zombie[i].x, zombie[i].y, zombieSize*.3)
-        // fill("#977638")
-        // ellipse(zombie[i].x, zombie[i].y, zombieSize*.1)
-        // pop()
+        push()
+        strokeWeight(0)
+        fill("#316c1f")
+        ellipse(zombie[i].x, zombie[i].y, zombieSize)
+        fill("#456e25")
+        ellipse(zombie[i].x, zombie[i].y, zombieSize*.9)
+        fill("#5a702a")
+        ellipse(zombie[i].x, zombie[i].y, zombieSize*.7)
+        fill("#6e722e")
+        ellipse(zombie[i].x, zombie[i].y, zombieSize*.5)
+        fill("#827434")
+        ellipse(zombie[i].x, zombie[i].y, zombieSize*.3)
+        fill("#977638")
+        ellipse(zombie[i].x, zombie[i].y, zombieSize*.1)
+        pop()
 
         // making zombies images
-        push()
-        imageMode(CENTER)
-        image(img2, zombie[i].x, zombie[i].y, zombieSize, zombieSize)
-        pop()
+        // push()
+        // imageMode(CENTER)
+        // image(img2, zombie[i].x, zombie[i].y, zombieSize, zombieSize)
+        // pop()
     }
 }
-
 // resetting player position after collision with zombie
 let resetPosition = () => {
     player.x = random(0, window.innerWidth)
@@ -303,7 +302,6 @@ let resetPosition = () => {
     // lets make our hero invincible for 2 seconds
     lifes-= 1
 }
-
 // Bullet Functions 
 
 
@@ -333,17 +331,14 @@ let updateBullets = () => {
                 zombieSpeed[j] = p5.Vector.random2D().mult(random(minZombieSpeed, maxZombieSpeed))
             }
         }
-        
         bullets[i].add(bulletSpeed[i])
         push()
         // creating color and size of bullets
         fill('black')
         stroke('gray')
         ellipse(bullets[i].x, bullets[i].y, 10, 10)
-        pop()
-        
+        pop()   
     }
-
 }
 
 function keyPressed() {
